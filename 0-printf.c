@@ -10,7 +10,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int p, n_printed = 0, count;
+	int p, n_printed = 0;
 	char *str;
 
 	va_start(args, format);
@@ -34,11 +34,7 @@ int _printf(const char *format, ...)
 			else if (format[p] == 's')
 			{
 				str = va_arg(args, char *);
-				for (count = 0; str[count] != '\0'; count++)
-				{
-					n_printed++;
-					_putchar(str[count]);
-				}
+				n_printed += _print_string(str);
 			}
 			else if (format[p] == '%')
 			{
