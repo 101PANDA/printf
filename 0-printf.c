@@ -1,11 +1,18 @@
 #include "main.h"
 #include <stdarg.h>
 
+/**
+ * _printf - print arguments according to a format
+ * @format: controls the output given
+ * Return: n_printed[ number of characters printed ]
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int p, n_printed =0, count;
+	int p, n_printed = 0, count;
 	char *str;
+
 	va_start(args, format);
 	p = 0;
 
@@ -42,5 +49,5 @@ int _printf(const char *format, ...)
 		p++;
 	}
 	va_end(args);
-	return(n_printed);
+	return (n_printed);
 }
