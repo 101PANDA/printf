@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * _print_string - prints content of a string
@@ -10,10 +11,23 @@ int _print_string(char *str)
 {
 	int count = 0;
 
-	while (str[count] != '\0')
+	if(str != NULL)
 	{
-		_putchar(str[count]);
-		count++;
+		while (str[count] != '\0')
+		{
+			_putchar(str[count]);
+			count++;
+		}
+	}
+	else
+	{
+		str = "(null)";
+
+		while (str[count] != '\0')
+		{
+			_putchar(str[count]);
+			count++;
+		}
 	}
 
 	return (count);
