@@ -41,7 +41,7 @@ int select_func(const char *format, va_list args, int p)
 		{
 			_putchar(format[p]);
 		}
-		else if(format[p] == '\0')
+		else if (format[p] == '\0')
 			;
 		else
 		{
