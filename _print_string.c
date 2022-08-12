@@ -11,7 +11,7 @@ int _print_string(char *str)
 {
 	int count = 0;
 
-	if(str != NULL)
+	if (str != NULL)
 	{
 		while (str[count] != '\0')
 		{

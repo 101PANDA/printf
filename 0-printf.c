@@ -12,32 +12,19 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int p, n_printed = 0;
-	char *str;
 
+	if (format == NULL)
+	{
+		return (0);
+	}
 	va_start(args, format);
 	p = 0;
 	while (format[p] != '\0')
 	{
 		if (format[p] == '%')
 		{
+			n_printed += select_func(format, args, p);
 			p++;
-			if (format[p] == 'c')
-			{
-				n_printed++;
-				_putchar(va_arg(args, int));
-			}
-			else if (format[p] == 's')
-			{
-				str = va_arg(args, char *);
-				n_printed += _print_string(str);
-			}
-			else if (format[p] == '%')
-			{
-				n_printed++;
-				_putchar(format[p]);
-			}
-			else if (format[p] == 'd' || format[p] == 'i')
-				n_printed += print_number(va_arg(args, int));
 		}
 		else
 		{
