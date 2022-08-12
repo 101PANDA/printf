@@ -35,6 +35,10 @@ int select_func(const char *format, va_list args, int p)
 	{
 		n_printed += print_number(va_arg(args, int));
 	}
+	else if (format[p] == 'b')
+	{
+		n_printed += print_binary(va_arg(args, int));
+	}
 	else
 	{
 		if (format[p] == ' ' || format[p] == '\n')
